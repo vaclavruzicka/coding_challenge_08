@@ -70,3 +70,14 @@ function calculateLoanPayment(principal, rate, time){
 //Used .toFixed(2) to round the output to two decimal places.
 console.log(`Total Payment: $${calculateLoanPayment(1000, 0.05, 2).toFixed(2)}`); //Expected Output: "Total Payment: $1100.00"
 console.log(`Total Payment: $${calculateLoanPayment(5000, 0.07, 3).toFixed(2)}`); //Expected Output: "Total Payment: $6050.00"
+
+//Task 6 - Higher Order Functions
+
+let transactions = [200, 1500, 3200, 800, 2500]; //Declaring an array named transactions with five values.
+
+function filterLargeTransactions(transactions, amount){
+    return transactions.filter(amount => amount > 1000); //Setting the minimum price to 1,001.
+};
+
+//Logging the array with the filter function.
+console.log(filterLargeTransactions(transactions, 1000)) //Exepcted Output: [1500, 3200, 2500]
