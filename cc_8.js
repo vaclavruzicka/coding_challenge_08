@@ -99,3 +99,17 @@ let cart = createCartTracker(); //Setting the function equal to "cart" to allow 
 //Logging the function using "cart".
 console.log(cart(20)); //Expected Output: "Total Car Vaule: $20"
 console.log(cart(35)); //Expected Output: "Total Car Value: $55"
+
+//Task 8 - Recusion in JavaScript
+
+//Writing a function that calculates savings given years and inital amount.
+function calculateSavings(years, amount){
+    if (years >= 10) return `Projected Savings: $${amount.toFixed(2)}`; //Returns the amount of savings when 10 years is reached.
+    amount *= 1.05; //If it isn't year 10, the amount will be multipled by 1.05 in order to simulate savings accrual.
+    return calculateSavings(years + 1, amount); //Repeats the function until year 10 is reached.
+
+}
+
+//Logging the function with provided data.
+console.log(calculateSavings(8, 1000)); //Expected Output: "Projected Savings: $1102.50"
+console.log(calculateSavings(5, 5000)); //Expected Output: "Projected Savings: "6381.41"
