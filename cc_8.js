@@ -81,3 +81,21 @@ function filterLargeTransactions(transactions, amount){
 
 //Logging the array with the filter function.
 console.log(filterLargeTransactions(transactions, 1000)) //Exepcted Output: [1500, 3200, 2500]
+
+//Task 7 - Closures
+
+//Writing a function that creates a running total of a cart total.
+function createCartTracker(){
+    let currentTotal = 0; //Setting the running total to 0.
+
+    return function(price){
+        currentTotal += price; //Adding the input price to the total.
+        return `Total Cart Value: $${currentTotal}`; //Returning the total with a template literal.
+    }
+}
+
+let cart = createCartTracker(); //Setting the function equal to "cart" to allow for ease of use.
+
+//Logging the function using "cart".
+console.log(cart(20)); //Expected Output: "Total Car Vaule: $20"
+console.log(cart(35)); //Expected Output: "Total Car Value: $55"
