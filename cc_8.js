@@ -57,3 +57,16 @@ function calculateRentalCost(days, carType, insurance = false){
 //Using .toFIxed(2) to round the output to two decimal places.
 console.log(`Total Rental Cost: $${calculateRentalCost(3, "Economy", true).toFixed(2)}`); //Expected Output: "Total Rental Cost: $180"
 console.log(`Total Rental Cost: $${calculateRentalCost(5, "Luxury", false).toFixed(2)}`); //Expected Output: "Total Rental Cost: $500"
+
+//Task 5 - Returning Values
+
+//Writing a function that calcualtes a total loan payment given the principal amount, intrest rate, and time.
+function calculateLoanPayment(principal, rate, time){
+    let totalPayment = principal + (principal * rate * time); //Adding the intrest to the principal amount.
+    return totalPayment; //Returning the total amount due.
+};
+
+//Logging the function with provdided data using a template literal.
+//Used .toFixed(2) to round the output to two decimal places.
+console.log(`Total Payment: $${calculateLoanPayment(1000, 0.05, 2).toFixed(2)}`); //Expected Output: "Total Payment: $1100.00"
+console.log(`Total Payment: $${calculateLoanPayment(5000, 0.07, 3).toFixed(2)}`); //Expected Output: "Total Payment: $6050.00"
