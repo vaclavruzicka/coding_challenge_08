@@ -37,4 +37,23 @@ const calculateServiceFee = (amount, serviceType) => {
 //Logging the function with provided data using a template literal.
 //Used .toFixed(2) in order to round the output to two decimal places.
 console.log(`Service Fee: $${calculateServiceFee(200, "Premium").toFixed(2)}`); //Expected Output: "Service Fee: $30.00"
-console.log(`Service Fee: $${calculateServiceFee(500, "Standard").toFixed(2)}`); //Expected Output: "Service Fee" $50.00
+console.log(`Service Fee: $${calculateServiceFee(500, "Standard").toFixed(2)}`); //Expected Output: "Service Fee" $50.00"
+
+//Task 4 - Parameter and Arguments
+
+//Writing a function that calculates a rental cost given how many days the rental is for, the type of car, and whether they bought insurance.
+function calculateRentalCost(days, carType, insurance = false){
+    let rentalRates = { "Economy": 40, "Standard": 60, "Luxury" : 100}; //Declaring the different car types in an object so that the function can easily access them.
+    if (insurance === true) {
+        let totalCost = (rentalRates[carType] * days + (20 * days)); //Adding the insurance payment in they did buy insurance.
+        return totalCost; //Returning the total cost.
+    } else {
+        let totalCost = (rentalRates[carType] * days); //Leaving the insurance payment out if they did not buy the insurance.
+        return totalCost; //Returning the total cost.
+    }
+};
+
+//Logging the function with provided data using a template literal.
+//Using .toFIxed(2) to round the output to two decimal places.
+console.log(`Total Rental Cost: $${calculateRentalCost(3, "Economy", true).toFixed(2)}`); //Expected Output: "Total Rental Cost: $180"
+console.log(`Total Rental Cost: $${calculateRentalCost(5, "Luxury", false).toFixed(2)}`); //Expected Output: "Total Rental Cost: $500"
