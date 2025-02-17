@@ -2,8 +2,8 @@
 
 //Writing a function that calculates a net salary given a base salary, bonus, and tax rate.
 function calculateSalary(baseSalary, bonus, taxRate){
-    let netSalary = (baseSalary + bonus) - (baseSalary * taxRate) //Adding the base salary and bonus, while subtracting taxes.
-    return netSalary //Returns the net salary.
+    let netSalary = (baseSalary + bonus) - (baseSalary * taxRate); //Adding the base salary and bonus, while subtracting taxes.
+    return netSalary; //Returns the net salary.
 };
 //Logging the function with provided data using a template literal.
 //Used .toFixed(2) to round the output to two decimal places.
@@ -14,11 +14,27 @@ console.log(`Net Salary: $${calculateSalary(7000,1000,0.15).toFixed(2)}`); //Exp
 
 //Writing a function that calculates a discounted price given the discount rate and the base price.
 function calculateDiscount(price, discountRate){
-    let finalPrice = price - (price * discountRate) //Subtracting the discount amount from the price.
-    return finalPrice //Returning the final price.
+    let finalPrice = price - (price * discountRate); //Subtracting the discount amount from the price.
+    return finalPrice; //Returning the final price.
 };
 
 //Logging the data with proivded data using a template literal.
 //Used .toFixed(2) to round the output to two decimal places.
 console.log(`Final Price: $${calculateDiscount(100, 0.2).toFixed(2)}`); //Expected Output: "Final Price: $80.00"
 console.log(`Final Price: $${calculateDiscount(250, 0.15).toFixed(2)}`) //Expected Output: "Final Price: $212.50"
+
+//Task 3 - Arrow Function
+
+//Writing a function that calculates a service fee given an amount and a type of service.
+const calculateServiceFee = (amount, serviceType) => {
+    let serviceFee = 0;
+    if (serviceType === "Premium") serviceFee = amount * 0.15; //Making the "Premium" service type be a 15% fee.
+    else if (serviceType === "Standard") serviceFee = amount * 0.10; //Making the "Standard" service type ba a 10% fee.
+    else serviceFee = amount * 0.05; //Making anything else, which includes the "Basic" service type, a 5% fee.
+    return serviceFee; //Returning the service fee.
+}
+
+//Logging the function with provided data using a template literal.
+//Used .toFixed(2) in order to round the output to two decimal places.
+console.log(`Service Fee: $${calculateServiceFee(200, "Premium").toFixed(2)}`); //Expected Output: "Service Fee: $30.00"
+console.log(`Service Fee: $${calculateServiceFee(500, "Standard").toFixed(2)}`); //Expected Output: "Service Fee" $50.00
